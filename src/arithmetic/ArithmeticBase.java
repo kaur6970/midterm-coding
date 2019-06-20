@@ -15,25 +15,28 @@ import java.util.Scanner;
  */
 public class ArithmeticBase 
 {
- public double x,y;
+    //applying the encapsulation by making data members private
+    private double x,y;
     double calculate(double x, double y) 
         {
         Scanner sc =new Scanner(System.in);
-        System.out.println("enter String");
-        String s= sc.next();
-        switch (s.toUpperCase()) 
+        System.out.println("enter a number from 1 to 4");
+        int s= sc.nextInt();
+        if(s == 1) 
         {
-            case "PLUS":
-                return x + y;
-            case "MINUS":
-                return x - y;
-            case "TIMES":
-                return x * y;
-            case "DIVIDE":
+                return x + y;}
+        else if(s == 2) {
+            return x - y;
+        }else if(s==3) {
+           return x * y;
+        }else if(s == 4) {
                 return x / y;
-            default:
-                throw new AssertionError("Unknown operations " + this);
-        }
+        }else {
+            System.out.println("enter a number from 1 to 4");
+            s = sc.nextInt();
+            
     }
+        return 0;
    
+        }
 }
